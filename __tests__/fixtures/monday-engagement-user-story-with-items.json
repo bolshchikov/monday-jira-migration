@@ -1,0 +1,122 @@
+{
+  "name": "Segments Data should be shown in looker",
+  "state": "active",
+  "creator": {
+    "email": "yaara.wertheim@tipalti.com"
+  },
+  "column_values": [
+    {
+      "text": "",
+      "title": "Subitems"
+    },
+    {
+      "text": "Marc Lousky, Elena Chernyshev",
+      "title": "Owner"
+    },
+    {
+      "text": "In Design",
+      "title": "Status"
+    },
+    {
+      "text": "",
+      "title": "Est."
+    },
+    {
+      "text": "Segments",
+      "title": "Epic"
+    },
+    {
+      "text": "P1",
+      "title": "Priority"
+    },
+    {
+      "text": "Improvement",
+      "title": "Type"
+    },
+    {
+      "text": "",
+      "title": "Scheduled Date"
+    },
+    {
+      "text": "",
+      "title": "Customer"
+    },
+    {
+      "text": "2022-03-20 08:18:33 UTC",
+      "title": "Created by"
+    },
+    {
+      "text": "",
+      "title": "JIRA"
+    },
+    {
+      "text": "",
+      "title": "Release Number"
+    },
+    {
+      "text": "",
+      "title": "Release Date"
+    },
+    {
+      "text": null,
+      "title": "Squad"
+    },
+    {
+      "text": "2440355258",
+      "title": "Item ID"
+    }
+  ],
+  "updates": [],
+  "subitems": [
+    {
+      "name": "Augury missing departments in Looker \"Requests\" table",
+      "state": "active",
+      "creator": {
+        "email": "yaara.wertheim@tipalti.com"
+      },
+      "column_values": [
+        {
+          "text": "Marc Lousky",
+          "title": "Owner"
+        },
+        {
+          "text": "Pending Dev",
+          "title": "Status Labels"
+        },
+        {
+          "text": "",
+          "title": "Est."
+        },
+        {
+          "text": "P2",
+          "title": "Priority"
+        },
+        {
+          "text": "2412218367",
+          "title": "Item ID"
+        },
+        {
+          "text": "",
+          "title": "Customer"
+        },
+        {
+          "text": "",
+          "title": "JIRA"
+        },
+        {
+          "text": "2022-03-14 07:33:12 UTC",
+          "title": "Created by"
+        },
+        {
+          "text": "",
+          "title": "Release Number"
+        },
+        {
+          "text": "",
+          "title": "Release Date"
+        }
+      ],
+      "updates": []
+    }
+  ]
+}
