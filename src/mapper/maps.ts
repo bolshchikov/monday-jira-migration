@@ -30,4 +30,4 @@ export enum PRIORITY_MAP {
   'P2' = 'Major',
   'P3' = 'Minor',
   'P4' = 'Trivial',
-};
+}
