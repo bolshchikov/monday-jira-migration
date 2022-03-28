@@ -5,6 +5,7 @@ import { ENGAGEMENT_DEFAULT_VALUES } from '../../src/mapper/consts';
 import { TMondayItem } from '../../src/monday/types';
 import mondayBug from '../fixtures/monday-engagement-bug.json';
 import mondayUserStory from '../fixtures/monday-engagement-user-story.json';
+import mondayUserStoryWithSubitem from '../fixtures/monday-engagement-user-story-with-items.json';
 
 describe('Mapper', () => {
   describe('Filters', () => {
@@ -67,7 +68,7 @@ describe('Mapper', () => {
         reporter: mondayUserStory.creator.email.split('@')[0],
         creator: mondayUserStory.creator.email.split('@')[0],
         assignee: '',
-        description: mondayUserStory.updates[0].body,
+        description: mondayUserStory.updates[0]?.body ?? '',
         ce: 2,
         epicLink: `${PROJECT_KEY}-79`,
         productOwner: 'yaara.wertheim',
@@ -81,6 +82,56 @@ describe('Mapper', () => {
         productArea: 'Procurement',
         issueId: 1,
         parentId: undefined,
+      });
+    });
+    it('should map a user story with subitem', () => {
+      const [issue, subIssue] = mapFromMondayToJira([mondayUserStoryWithSubitem], ENGAGEMENT_DEFAULT_VALUES);
+      expect(issue).toEqual({
+        summary: mondayUserStoryWithSubitem.name,
+        issueType: 'CD User Story',
+        status: 'Backlog',
+        priority: 'Critical',
+        reporter: mondayUserStoryWithSubitem.creator.email.split('@')[0],
+        creator: mondayUserStoryWithSubitem.creator.email.split('@')[0],
+        assignee: 'marc.lousky',
+        description: '',
+        ce: 1,
+        epicLink: `${PROJECT_KEY}-96`,
+        productOwner: 'yaara.wertheim',
+        taskCategory: 'Inherited from Epic',
+        team: 'Approve -> Engagement',
+        userImpact: '',
+        bugNature: 'Functionality',
+        stage: 'Production',
+        regressionBug: 'Yes',
+        bugCategory: 'Backlog bug',
+        productArea: 'Procurement',
+        issueId: 1,
+        parentId: undefined,
+      });
+      const subItem = mondayUserStoryWithSubitem.subitems[0];
+      expect(subIssue).toEqual({
+        summary: subItem.name,
+        issueType: 'CD User Story',
+        status: 'Backlog',
+        priority: 'Major',
+        reporter: subItem.creator.email.split('@')[0],
+        creator: subItem.creator.email.split('@')[0],
+        assignee: 'marc.lousky',
+        description: '',
+        ce: 1,
+        epicLink: ``,
+        productOwner: 'yaara.wertheim',
+        taskCategory: 'Inherited from Epic',
+        team: 'Approve -> Engagement',
+        userImpact: '',
+        bugNature: 'Functionality',
+        stage: 'Production',
+        regressionBug: 'Yes',
+        bugCategory: 'Backlog bug',
+        productArea: 'Procurement',
+        issueId: undefined,
+        parentId: 1,
       });
     });
   });

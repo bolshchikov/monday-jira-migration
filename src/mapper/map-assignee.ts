@@ -1,8 +1,9 @@
 import { TCsvIssue } from '../jira/types';
 import { TMondayItem } from '../monday/types';
 
-const userNameToJiraName = (userName: string): string => {
-  const [firstName, lastName] = userName.split(' ');
+const userNameToJiraName = (columnText: string): string => {
+  const owners = columnText.split(',');
+  const [firstName, lastName] = owners[0].split(' ');       // JIRA doesn't support several owners, therefore we will take the first one
   return firstName.toLowerCase() + '.' + lastName.toLowerCase();
 }
 
