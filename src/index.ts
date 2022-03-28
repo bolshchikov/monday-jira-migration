@@ -10,7 +10,7 @@ const start = async () => {
   try {
     const tasks = await monday.readBoardTasks(ENGAGEMENT_BOARD_ID);
     const jiraTasks = await mapper.mapFromMondayToJira(tasks, ENGAGEMENT_DEFAULT_VALUES);
-    // await jira.generateCSV(jiraTasks);
+    await jira.generateCSV(jiraTasks);
   } catch (error: any) {
     console.error(error);
   }
