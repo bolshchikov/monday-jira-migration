@@ -1,0 +1,74 @@
+{
+  "name": "Clicking on \"add new vendor\" on 150% zoom on a laptop screen breaks CSS",
+  "state": "active",
+  "creator": {
+    "email": "gal.yaniv@tipalti.com"
+  },
+  "column_values": [
+    {
+      "text": "",
+      "title": "Subitems"
+    },
+    {
+      "text": "Hadar Gat",
+      "title": "Owner"
+    },
+    {
+      "text": "Open",
+      "title": "Status"
+    },
+    {
+      "text": "8",
+      "title": "Est."
+    },
+    {
+      "text": "PR-PO",
+      "title": "Epic"
+    },
+    {
+      "text": "P3",
+      "title": "Priority"
+    },
+    {
+      "text": "Bug",
+      "title": "Type"
+    },
+    {
+      "text": "",
+      "title": "Scheduled Date"
+    },
+    {
+      "text": "Riskified",
+      "title": "Customer"
+    },
+    {
+      "text": "2022-03-08 09:44:26 UTC",
+      "title": "Created by"
+    },
+    {
+      "text": "https://jira.tipalti.com:7000/browse/OP-18394",
+      "title": "JIRA"
+    },
+    {
+      "text": "",
+      "title": "Release Number"
+    },
+    {
+      "text": "",
+      "title": "Release Date"
+    },
+    {
+      "text": null,
+      "title": "Squad"
+    },
+    {
+      "text": "2387707879",
+      "title": "Item ID"
+    }
+  ],
+  "updates": [
+    {
+      "body": "<p>reproduces on my computer.</p><p></p><p><strong>steps to reproduce</strong></p><ol><li>go to dev, any user (with vendors module) will do</li><li>go to vendors</li><li>increase zoom to 150% and resize window to 1280*625</li><li>click on Add new vendor button</li></ol><p><strong>expected </strong><b>behavior</b></p><p>drop down shows under the button</p><p><strong>actual behavior</strong></p><p>drop down is shown on the side of the screen, needs to scroll horizontally to view it</p>"
+    }
+  ]
+}
