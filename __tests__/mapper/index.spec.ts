@@ -112,7 +112,7 @@ describe('Mapper', () => {
       const subItem = mondayUserStoryWithSubitem.subitems[0];
       expect(subIssue).toEqual({
         summary: subItem.name,
-        issueType: 'CD User Story',
+        issueType: 'Sub-task',
         status: 'Backlog',
         priority: 'Major',
         reporter: subItem.creator.email.split('@')[0],

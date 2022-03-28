@@ -28,8 +28,24 @@ const mapInit = (defaults: Partial<TCsvIssue>): TCsvIssue => {
   }
 };
 
-export const mapFromMondayToJira = (tasks: TMondayItem[], defaults: Partial<TCsvIssue>) => {
-  return tasks
+const mapTaskToIssue = (task: TMondayItem, defaults: Partial<TCsvIssue>, isSubItem = false): TCsvIssue => {
+  let issue: TCsvIssue = mapInit(defaults);
+  issue = mapSummary(task, issue);
+  issue = mapIssueType(task, issue, isSubItem);
+  issue = mapPriority(task, issue);
+  issue = mapStatus(task, issue);
+  issue = mapCreator(task, issue);
+  issue = mapAssignee(task, issue);
+  issue.reporter = issue.creator;
+  issue = mapDescription(task, issue);
+  issue = mapUserImpact(task, issue);
+  issue = mapEpicLink(task, issue);
+  issue = mapCE(task, issue);
+  return issue;
+};
+
+export const mapFromMondayToJira = (tasks: TMondayItem[], defaults: Partial<TCsvIssue>): TCsvIssue[] => {
+  const filteredTasks = tasks
     .filter((task: TMondayItem) => task.state === 'active')
     .filter((task: TMondayItem) => {
       const disallowedStatuses = ['Done', 'Won\'t Fix', 'Can\'t Reproduce'];
@@ -38,21 +54,22 @@ export const mapFromMondayToJira = (tasks: TMondayItem[], defaults: Partial<TCsv
         const status = statusColumn.text ?? '';
         return !disallowedStatuses.includes(status);
       }
-    })
-    .map((task: TMondayItem, idx) => {
-      let to = mapInit(defaults);
-      to = mapSummary(task, to);
-      to = mapIssueType(task, to);
-      to = mapPriority(task, to);
-      to = mapStatus(task, to);
-      to = mapCreator(task, to);
-      to = mapAssignee(task, to);
-      to.reporter = to.creator;
-      to = mapDescription(task, to);
-      to = mapUserImpact(task, to);
-      to = mapEpicLink(task, to);
-      to = mapCE(task, to);
-      to.issueId = idx + 1;
-      return to;
     });
+
+  const mappedTasks = filteredTasks.reduce((acc: TCsvIssue[], task: TMondayItem, idx: number) => {
+    const issue = mapTaskToIssue(task, defaults);
+    issue.issueId = idx + 1;
+    acc.push(issue);
+
+    const subitems = task.subitems?.map((subitem: TMondayItem) => {
+      const subitemIssue = mapTaskToIssue(subitem, defaults, true);
+      subitemIssue.parentId = issue.issueId;
+      return subitemIssue;
+    }) ?? [];
+
+    acc.push(...subitems);
+
+    return acc;
+  }, []);
+  return mappedTasks;
 };
