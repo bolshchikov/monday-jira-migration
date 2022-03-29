@@ -48,7 +48,7 @@ export const mapFromMondayToJira = (tasks: TMondayItem[], defaults: Partial<TCsv
   const filteredTasks = tasks
     .filter((task: TMondayItem) => task.state === 'active')
     .filter((task: TMondayItem) => {
-      const disallowedStatuses = ['Done', 'Won\'t Fix', 'Can\'t Reproduce'];
+      const disallowedStatuses = ['Done', 'Won\'t Fix', 'Can\'t Reproduce', 'On hold', 'Stuck'];
       const statusColumn = task.column_values.find(column => column.title === 'Status');
       if (statusColumn) {
         const status = statusColumn.text ?? '';

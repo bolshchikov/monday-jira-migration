@@ -20,7 +20,9 @@ describe('Mapper', () => {
     it.each([
       'Done',
       'Won\'t Fix',
-      'Can\'t Reproduce'
+      'Can\'t Reproduce',
+      'On hold',
+      'Stuck',
     ])('should return null if status is `%s`', (text) => {
       const task: TMondayItem = cloneDeep(mondayBug);
       const statusColumn = task.column_values.find(column => column.title === 'Status');
