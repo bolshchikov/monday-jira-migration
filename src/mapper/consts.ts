@@ -13,6 +13,7 @@ export const ENGAGEMENT_DEFAULT_VALUES: Partial<TCsvIssue> = {
   taskCategory: 'Inherited from Epic',
   epicLink: `${PROJECT_KEY}-85`,
   userImpact: 'All',
+  apiChanges: 'None',
   parentId: undefined
 };
 
@@ -26,5 +27,8 @@ export const ONBOARDING_DEFAULT_VALUES: Partial<TCsvIssue> = {
   regressionBug: 'Yes',
   productArea: 'Procurement',
   taskCategory: 'Inherited from Epic',
+  userImpact: 'All',
+  apiChanges: 'None',
+  epicLink: ``,
   parentId: undefined
 };

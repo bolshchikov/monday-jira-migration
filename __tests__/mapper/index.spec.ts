@@ -59,6 +59,7 @@ describe('Mapper', () => {
         productArea: 'Procurement',
         issueId: 1,
         parentId: undefined,
+        apiChanges: 'None'
       });
     });
     it('should map an user story', () => {
@@ -85,6 +86,7 @@ describe('Mapper', () => {
         productArea: 'Procurement',
         issueId: 1,
         parentId: undefined,
+        apiChanges: 'None'
       });
     });
     it('should map a user story with subitem', () => {
@@ -111,6 +113,7 @@ describe('Mapper', () => {
         productArea: 'Procurement',
         issueId: 1,
         parentId: undefined,
+        apiChanges: 'None'
       });
       const subItem = mondayUserStoryWithSubitem.subitems[0];
       expect(subIssue).toEqual({
@@ -135,6 +138,7 @@ describe('Mapper', () => {
         productArea: 'Procurement',
         issueId: undefined,
         parentId: 1,
+        apiChanges: 'None'
       });
     });
   });
@@ -152,6 +156,7 @@ describe('Mapper', () => {
       expect(result).toHaveProperty('epicLink', `${PROJECT_KEY}-85`);
       expect(result).toHaveProperty('userImpact', 'All');
       expect(result).toHaveProperty('parentId', undefined);
+      expect(result).toHaveProperty('apiChanges', 'None');
     });
     it.todo('should have default values for Onboarding');
     it.todo('should have default values for Growth');

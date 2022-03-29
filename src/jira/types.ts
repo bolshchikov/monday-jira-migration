@@ -18,6 +18,7 @@ export type TCsvIssue = {
   stage?: 'Production';
   regressionBug: string;
   bugCategory: 'Backlog bug';
+  apiChanges?: string;
   issueId?: number; // for non sub-tasks
   parentId?: number;
 }
