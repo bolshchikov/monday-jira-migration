@@ -4,8 +4,8 @@ import { TCsvIssue } from './types';
 
 export const generateCSV = async (data: TCsvIssue[]) => {
   const csv = Papa.unparse(data);
-  console.log('Generating CSV...');
+  console.log('\nGenerating CSV...');
   const name = `${process.cwd()}/output-${Date.now()}.csv`;
   fs.writeFileSync(name, csv);
-  console.log(`CSV generated at ${name}`);
+  console.log(`CSV generated at`, name);
 };
