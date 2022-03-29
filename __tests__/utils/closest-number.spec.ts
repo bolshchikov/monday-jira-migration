@@ -20,7 +20,10 @@ describe('Closest number', () => {
   it('should return 1 for 0', () => {
     expect(findClosest(POSSIBLE_CE, 0)).toBe(1);
   });
-  it('should return 3.5 for 4', () => {
+  it('should return 4 for 3.5', () => {
     expect(findClosest(POSSIBLE_CE, 3.5)).toBe(3);
+  });
+  it('should return 1 for 1.5', () => {
+    expect(findClosest(POSSIBLE_CE, 1.5)).toBe(1);
   });
 });
