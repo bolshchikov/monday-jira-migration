@@ -4,6 +4,7 @@ import { mapFromMondayToJira } from '../../src/mapper';
 import { ENGAGEMENT_DEFAULT_VALUES } from '../../src/mapper/consts';
 import { TMondayItem } from '../../src/monday/types';
 import mondayBug from '../fixtures/monday-engagement-bug.json';
+import mondayEmpty from '../fixtures/monday-engagement-empty.json';
 import mondayUserStory from '../fixtures/monday-engagement-user-story.json';
 import mondayUserStoryWithSubitem from '../fixtures/monday-engagement-user-story-with-items.json';
 
@@ -136,6 +137,23 @@ describe('Mapper', () => {
         parentId: 1,
       });
     });
+  });
+  describe('Defaults', () => {
+    it('should have default values for Engagement', () => {
+      const [result] = mapFromMondayToJira([mondayEmpty], ENGAGEMENT_DEFAULT_VALUES);
+      expect(result).toHaveProperty('ce', 1);
+      expect(result).toHaveProperty('productOwner', 'yaara.wertheim');
+      expect(result).toHaveProperty('bugNature', 'Functionality');
+      expect(result).toHaveProperty('stage', 'Production');
+      expect(result).toHaveProperty('team', 'Approve -> Engagement');
+      expect(result).toHaveProperty('regressionBug', 'Yes');
+      expect(result).toHaveProperty('productArea', 'Procurement');
+      expect(result).toHaveProperty('taskCategory', 'Inherited from Epic');
+      expect(result).toHaveProperty('epicLink', `${PROJECT_KEY}-85`);
+      expect(result).toHaveProperty('parentId', undefined);
+    });
+    it.todo('should have default values for Onboarding');
+    it.todo('should have default values for Growth');
   });
 
 });

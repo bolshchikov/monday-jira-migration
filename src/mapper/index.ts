@@ -39,8 +39,8 @@ const mapTaskToIssue = (task: TMondayItem, defaults: Partial<TCsvIssue>, isSubIt
   issue.reporter = issue.creator;
   issue = mapDescription(task, issue);
   issue = mapUserImpact(task, issue);
-  issue = mapEpicLink(task, issue);
-  issue = mapCE(task, issue);
+  issue = mapEpicLink(task, issue, isSubItem);
+  issue = mapCE(task, issue, isSubItem);
   return issue;
 };
 

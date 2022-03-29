@@ -1,0 +1,70 @@
+{
+  "name": "Clicking on \"add new vendor\" on 150% zoom on a laptop screen breaks CSS",
+  "state": "active",
+  "creator": {
+    "email": "gal.yaniv@tipalti.com"
+  },
+  "column_values": [
+    {
+      "text": "",
+      "title": "Subitems"
+    },
+    {
+      "text": "",
+      "title": "Owner"
+    },
+    {
+      "text": "Open",
+      "title": "Status"
+    },
+    {
+      "text": "",
+      "title": "Est."
+    },
+    {
+      "text": "",
+      "title": "Epic"
+    },
+    {
+      "text": "",
+      "title": "Priority"
+    },
+    {
+      "text": "",
+      "title": "Type"
+    },
+    {
+      "text": "",
+      "title": "Scheduled Date"
+    },
+    {
+      "text": "",
+      "title": "Customer"
+    },
+    {
+      "text": "2022-03-08 09:44:26 UTC",
+      "title": "Created by"
+    },
+    {
+      "text": "https://jira.tipalti.com:7000/browse/OP-18394",
+      "title": "JIRA"
+    },
+    {
+      "text": "",
+      "title": "Release Number"
+    },
+    {
+      "text": "",
+      "title": "Release Date"
+    },
+    {
+      "text": null,
+      "title": "Squad"
+    },
+    {
+      "text": "2387707879",
+      "title": "Item ID"
+    }
+  ],
+  "updates": []
+}

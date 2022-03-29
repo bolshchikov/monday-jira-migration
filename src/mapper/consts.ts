@@ -1,3 +1,4 @@
+import { PROJECT_KEY } from '../jira/consts';
 import { TCsvIssue } from '../jira/types';
 
 export const ENGAGEMENT_DEFAULT_VALUES: Partial<TCsvIssue> = {
@@ -10,6 +11,7 @@ export const ENGAGEMENT_DEFAULT_VALUES: Partial<TCsvIssue> = {
   regressionBug: 'Yes',
   productArea: 'Procurement',
   taskCategory: 'Inherited from Epic',
+  epicLink: `${PROJECT_KEY}-85`,
   parentId: undefined
 };
 
