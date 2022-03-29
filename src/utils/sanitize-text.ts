@@ -6,7 +6,7 @@ export const clearFromHTML = (text: string) => {
     .replaceAll('<br />', '\n');
 
   return sanitizeHtml(withoutBreakLines, {
-    allowedTags: ['strong'],
+    allowedTags: [],
     allowedAttributes: {}
   });
 };
