@@ -1,7 +1,8 @@
 import { TCsvIssue } from '../jira/types';
 import { TMondayItem } from '../monday/types';
+import { clearFromHTML } from '../utils/sanitize-text';
 
 export const mapDescription = (mondayTask: TMondayItem, to: TCsvIssue): TCsvIssue => {
-  to.description = mondayTask.updates[0]?.body ?? '';
+  to.description = clearFromHTML(mondayTask.updates[0]?.body ?? '');
   return to;
 };
