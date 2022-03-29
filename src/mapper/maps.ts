@@ -8,7 +8,7 @@ export const EPICS_MAP = {
   'Currency': `${PROJECT_KEY}-88`,
   'Customized forms': `${PROJECT_KEY}-89`,
   'Dashboard & Reporting': `${PROJECT_KEY}-90`,
-  'Draft': `${PROJECT_KEY}-91`,
+  'Drafts': `${PROJECT_KEY}-91`,
   'Employees': `${PROJECT_KEY}-92`,
   'ERP Integration': `${PROJECT_KEY}-83`,
   'File management': `${PROJECT_KEY}-93`,
