@@ -12,6 +12,7 @@ export const ENGAGEMENT_DEFAULT_VALUES: Partial<TCsvIssue> = {
   productArea: 'Procurement',
   taskCategory: 'Inherited from Epic',
   epicLink: `${PROJECT_KEY}-85`,
+  userImpact: 'All',
   parentId: undefined
 };
 

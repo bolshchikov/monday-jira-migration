@@ -103,7 +103,7 @@ describe('Mapper', () => {
         productOwner: 'yaara.wertheim',
         taskCategory: 'Inherited from Epic',
         team: 'Approve -> Engagement',
-        userImpact: '',
+        userImpact: 'All',
         bugNature: 'Functionality',
         stage: 'Production',
         regressionBug: 'Yes',
@@ -127,7 +127,7 @@ describe('Mapper', () => {
         productOwner: 'yaara.wertheim',
         taskCategory: 'Inherited from Epic',
         team: 'Approve -> Engagement',
-        userImpact: '',
+        userImpact: 'All',
         bugNature: 'Functionality',
         stage: 'Production',
         regressionBug: 'Yes',
@@ -150,6 +150,7 @@ describe('Mapper', () => {
       expect(result).toHaveProperty('productArea', 'Procurement');
       expect(result).toHaveProperty('taskCategory', 'Inherited from Epic');
       expect(result).toHaveProperty('epicLink', `${PROJECT_KEY}-85`);
+      expect(result).toHaveProperty('userImpact', 'All');
       expect(result).toHaveProperty('parentId', undefined);
     });
     it.todo('should have default values for Onboarding');
