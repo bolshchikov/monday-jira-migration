@@ -46,7 +46,7 @@ describe('Mapper', () => {
         creator: mondayBug.creator.email.split('@')[0],
         assignee: 'hadar.gat',
         description: mondayBug.updates[0].body,
-        ce: 5,
+        ce: 10,
         epicLink: `${PROJECT_KEY}-79`,
         productOwner: 'yaara.wertheim',
         team: 'Approve -> Engagement',
