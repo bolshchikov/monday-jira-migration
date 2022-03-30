@@ -6,8 +6,15 @@ export const clearFromHTML = (text: string) => {
     .replaceAll('<br>', '\n')
     .replaceAll('<br />', '\n');
 
-  return sanitizeHtml(withoutBreakLines, {
-    allowedTags: [],
-    allowedAttributes: {}
+  const sanitizedTextWithImages = sanitizeHtml(withoutBreakLines, {
+    allowedTags: ['img'],
+    allowedAttributes: {
+      img: ['src']
+    }
   });
+
+  return sanitizedTextWithImages
+    .replaceAll('<img src="', ' Image: ')
+    .replaceAll('" />', ' ')
+    .replaceAll('  ', ' ') // clean if we messed up somewhere with extra spaces
 };
