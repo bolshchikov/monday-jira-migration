@@ -13,8 +13,18 @@ describe('Sanitize test', () => {
     [
       `<p>1. How is it possible that a user who was just invited, create a request? </p><img src="https://tipalti.monday.com/protected_static/1562878/resources/370026068/big-image.png" data-asset_id="370026068"><p></p><p>2. What actions did an "active" user do? </p>`,
       `1. How is it possible that a user who was just invited, create a request? 2. What actions did an "active" user do? `
-    ]
+    ],
+
   ])('should clear html from text', (input, expected) => {
     expect(clearFromHTML(input)).toEqual(expected);
   });
+
+  it('should remove weird chard', () => {
+    const [input, expected] = [
+      `What is ﻿﻿PO completed mean? ﻿Why is it always no? ﻿﻿`,
+      `What is PO completed mean? Why is it always no? `,
+    ];
+    expect(clearFromHTML(input)).toEqual(expected);
+  });
 });
+
