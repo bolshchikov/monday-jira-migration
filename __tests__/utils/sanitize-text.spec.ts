@@ -8,11 +8,11 @@ describe('Sanitize test', () => {
     ],
     [
       `<p>sign in to <strong>dev </strong>user: test+finanacialoperationsspecialist__b92f@approve.com<br></p><p>use this purchase for example:</p><p><a href="https://dev.approve.com/purchases/623991f97c67ac001366ebfc" target="_blank" rel="noopener noreferrer">https://dev.approve.com/purchases/623991f97c67ac001366ebfc</a><br></p><p></p><p>when looking at the approval flow you can see the node below has the node name in parentheses:</p><img src="https://tipalti.monday.com/protected_static/1562878/resources/431707496/big-image.png" data-asset_id="431707496"><p>when you open the activity log the name disappears:</p><img src="https://tipalti.monday.com/protected_static/1562878/resources/431707811/big-image.png" data-asset_id="431707811">`,
-      `sign in to dev user: test+finanacialoperationsspecialist__b92f@approve.com\nuse this purchase for example:https://dev.approve.com/purchases/623991f97c67ac001366ebfc\nwhen looking at the approval flow you can see the node below has the node name in parentheses: Image: https://tipalti.monday.com/protected_static/1562878/resources/431707496/big-image.png when you open the activity log the name disappears: Image: https://tipalti.monday.com/protected_static/1562878/resources/431707811/big-image.png `,
+      `sign in to dev user: test+finanacialoperationsspecialist__b92f@approve.com\nuse this purchase for example:https://dev.approve.com/purchases/623991f97c67ac001366ebfc\nwhen looking at the approval flow you can see the node below has the node name in parentheses:\nImage: https://tipalti.monday.com/protected_static/1562878/resources/431707496/big-image.png\nwhen you open the activity log the name disappears:\nImage: https://tipalti.monday.com/protected_static/1562878/resources/431707811/big-image.png\n`,
     ],
     [
       `<p>1. How is it possible that a user who was just invited, create a request? </p><img src="https://tipalti.monday.com/protected_static/1562878/resources/370026068/big-image.png" data-asset_id="370026068"><p></p><p>2. What actions did an "active" user do? </p>`,
-      `1. How is it possible that a user who was just invited, create a request? Image: https://tipalti.monday.com/protected_static/1562878/resources/370026068/big-image.png 2. What actions did an "active" user do? `
+      `1. How is it possible that a user who was just invited, create a request? \nImage: https://tipalti.monday.com/protected_static/1562878/resources/370026068/big-image.png\n2. What actions did an "active" user do? `
     ],
 
   ])('should clear html from text', (input, expected) => {

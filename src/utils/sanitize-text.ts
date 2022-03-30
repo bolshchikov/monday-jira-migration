@@ -14,7 +14,7 @@ export const clearFromHTML = (text: string) => {
   });
 
   return sanitizedTextWithImages
-    .replaceAll('<img src="', ' Image: ')
-    .replaceAll('" />', ' ')
+    .replaceAll('<img src="', '\nImage: ')
+    .replaceAll('" />', '\n')
     .replaceAll('  ', ' ') // clean if we messed up somewhere with extra spaces
 };
