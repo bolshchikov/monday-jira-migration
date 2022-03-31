@@ -14,7 +14,7 @@ export const getAllBoardTasksQuery = gql`
           text 
           title
         }
-        updates(limit: 1) {
+        updates {
           body
         }
         subitems {
@@ -27,7 +27,7 @@ export const getAllBoardTasksQuery = gql`
             text 
             title
           }
-          updates(limit: 1) {
+          updates {
             body
           }   
         }
