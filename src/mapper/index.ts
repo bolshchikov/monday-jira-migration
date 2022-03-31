@@ -11,7 +11,7 @@ import { mapStatus } from './map-status';
 import { mapSummary } from './map-summary';
 import { mapUserImpact } from './map-user-impact';
 
-const mapInit = (defaults: Partial<TCsvIssue>): TCsvIssue => {
+export const mapInit = (defaults: Partial<TCsvIssue>): TCsvIssue => {
   return {
     summary: '',
     issueType: 'CD User Story',
