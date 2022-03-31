@@ -1,7 +1,7 @@
 import { cloneDeep } from 'lodash';
 import { PROJECT_KEY } from '../../src/jira/consts';
 import { mapFromMondayToJira } from '../../src/mapper';
-import { ENGAGEMENT_DEFAULT_VALUES } from '../../src/mapper/consts';
+import { ENGAGEMENT_DEFAULT_VALUES, ONBOARDING_DEFAULT_VALUES } from '../../src/mapper/consts';
 import { TMondayItem } from '../../src/monday/types';
 import mondayBug from '../fixtures/monday-engagement-bug.json';
 import mondayEmpty from '../fixtures/monday-engagement-empty.json';
@@ -159,7 +159,21 @@ describe('Mapper', () => {
       expect(result).toHaveProperty('parentId', undefined);
       expect(result).toHaveProperty('apiChanges', 'None');
     });
-    it.todo('should have default values for Onboarding');
+    it('should have default values for Onboarding', () => {
+      const [result] = mapFromMondayToJira([mondayEmpty], ONBOARDING_DEFAULT_VALUES);
+      expect(result).toHaveProperty('ce', 1);
+      expect(result).toHaveProperty('productOwner', 'anat.gat');
+      expect(result).toHaveProperty('bugNature', 'Functionality');
+      expect(result).toHaveProperty('stage', 'Production');
+      expect(result).toHaveProperty('team', 'Approve -> Onboarding');
+      expect(result).toHaveProperty('regressionBug', 'Yes');
+      expect(result).toHaveProperty('productArea', 'Procurement');
+      expect(result).toHaveProperty('taskCategory', 'Inherited from Epic');
+      expect(result).toHaveProperty('epicLink', `${PROJECT_KEY}-336`);
+      expect(result).toHaveProperty('userImpact', 'All');
+      expect(result).toHaveProperty('parentId', undefined);
+      expect(result).toHaveProperty('apiChanges', 'None');
+    });
     it.todo('should have default values for Growth');
   });
 
