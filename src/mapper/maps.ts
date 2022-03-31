@@ -13,7 +13,7 @@ export const EPICS_MAP = {
   'ERP Integration': `${PROJECT_KEY}-83`,
   'File management': `${PROJECT_KEY}-93`,
   'Generic back-office': `${PROJECT_KEY}-94`,
-  'Generic': `${PROJECT_KEY}-85`,
+  'Engagement generic': `${PROJECT_KEY}-85`,
   'Global Expansion': `${PROJECT_KEY}-95`,
   'PR-PO': `${PROJECT_KEY}-79`,
   'Quality & Performance': `${PROJECT_KEY}-84`,
@@ -22,6 +22,11 @@ export const EPICS_MAP = {
   'Tech Debt': `${PROJECT_KEY}-98`,
   'Tipalti Integration': `${PROJECT_KEY}-97`,
   'Vendors': `${PROJECT_KEY}-80`,
+  'Onboarding generic': `${PROJECT_KEY}-336`,
+  'Implementation': `${PROJECT_KEY}-337`,
+  'Documentation': `${PROJECT_KEY}-338`,
+  'Budget': `${PROJECT_KEY}-339`,
+  'User management': `${PROJECT_KEY}-92`,
 };
 
 export enum PRIORITY_MAP {
