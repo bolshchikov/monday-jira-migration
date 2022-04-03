@@ -16,7 +16,7 @@ describe('Map assignee', () => {
   it.each([
     ['Sergey Bolshchikov', 'sergey.bolshchikov'],
     ['Sergey Bolshchikov, Marc Lousky', 'sergey.bolshchikov'],
-    ['Sergey King Bolshchikov', 'sergey.king.bolshchikov']
+    ['Sergey King Bolshchikov', 'sergey.kingbolshchikov']
   ])('should map name correctly', (input, expected) => {
     const taskWithOwner = setOwner(input);
     const issue = mapInit({});

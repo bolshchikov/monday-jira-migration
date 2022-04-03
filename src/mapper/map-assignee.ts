@@ -3,8 +3,8 @@ import { TMondayItem } from '../monday/types';
 
 const userNameToJiraName = (columnText: string): string => {
   const owners = columnText.split(',');
-  const parts = owners[0].split(' ');       // JIRA doesn't support several owners, therefore we will take the first one
-  return parts.map(n => n.toLowerCase()).join('.')
+  const [firstName, ...restName] = owners[0].split(' ');       // JIRA doesn't support several owners, therefore we will take the first one
+  return `${firstName.toLowerCase()}.${restName.map(s => s.toLowerCase()).join('')}`;
 }
 
 export const mapAssignee = (mondayTask: TMondayItem, to: TCsvIssue): TCsvIssue => {
