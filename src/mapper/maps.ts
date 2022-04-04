@@ -27,6 +27,12 @@ export const EPICS_MAP = {
   'Documentation': `${PROJECT_KEY}-338`,
   'Budget': `${PROJECT_KEY}-339`,
   'User management': `${PROJECT_KEY}-92`,
+  'Intacct': `${PROJECT_KEY}-437`,
+  'Split lines': `${PROJECT_KEY}-441`,
+  'Punchout': `${PROJECT_KEY}-438`,
+  'PO Service': `${PROJECT_KEY}-439`,
+  'Growth generic': `${PROJECT_KEY}-440`,
+  'Bamboo/HR': `${PROJECT_KEY}-442`,
 };
 
 export enum PRIORITY_MAP {
