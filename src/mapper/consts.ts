@@ -32,3 +32,19 @@ export const ONBOARDING_DEFAULT_VALUES: Partial<TCsvIssue> = {
   team: 'Approve -> Onboarding',
   userImpact: 'All',
 };
+
+export const GROWTH_DEFAULT_VALUES: Partial<TCsvIssue> = {
+  apiChanges: 'None',
+  bugNature: 'Functionality',
+  ce: 1,
+  creator: 'leah.sperer',
+  epicLink: `${PROJECT_KEY}-440`,
+  parentId: undefined,
+  productArea: 'Procurement',
+  productOwner: 'leah.sperer',
+  regressionBug: 'Yes',
+  stage: 'Production',
+  taskCategory: 'Inherited from Epic',
+  team: 'Approve -> Growth',
+  userImpact: 'All',
+};

@@ -2,7 +2,6 @@ import { TCsvIssue } from '../jira/types';
 import { TMondayItem } from '../monday/types';
 import { mapAssignee } from './map-assignee';
 import { mapCE } from './map-ce';
-import { mapCreator } from './map-creator';
 import { mapDescription } from './map-description';
 import { mapEpicLink } from './map-epic-link';
 import { mapIssueType } from './map-issue-type';
@@ -34,7 +33,7 @@ const mapTaskToIssue = (task: TMondayItem, defaults: Partial<TCsvIssue>, isSubIt
   issue = mapIssueType(task, issue, isSubItem);
   issue = mapPriority(task, issue);
   issue = mapStatus(task, issue);
-  issue = mapCreator(task, issue);
+  // issue = mapCreator(task, issue);
   issue = mapAssignee(task, issue);
   issue.reporter = issue.creator;
   issue = mapDescription(task, issue);
